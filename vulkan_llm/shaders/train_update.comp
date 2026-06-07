@@ -1,0 +1,62 @@
+#version 450
+
+layout(local_size_x = 1, local_size_y = 1, local_size_z = 1) in;
+
+layout(set = 0, binding = 0) readonly buffer InputBuf { int data[]; } input_indices;
+layout(set = 0, binding = 1) readonly buffer dW1Buf { float data[]; } dW1_per;
+layout(set = 0, binding = 2) readonly buffer dW2Buf { float data[]; } dW2_per;
+layout(set = 0, binding = 3) readonly buffer db1Buf { float data[]; } db1_per;
+layout(set = 0, binding = 4) readonly buffer db2Buf { float data[]; } db2_per;
+layout(set = 0, binding = 5) buffer W1Buf { float data[]; } W1;
+layout(set = 0, binding = 6) buffer W2Buf { float data[]; } W2;
+layout(set = 0, binding = 7) buffer b1Buf { float data[]; } b1;
+layout(set = 0, binding = 8) buffer b2Buf { float data[]; } b2;
+
+layout(push_constant) uniform Params {
+    int B;
+    int V;
+    int H;
+    float lr;
+    float invB;
+} params;
+
+void main() {
+    int id = int(gl_GlobalInvocationID.x);
+    int B = params.B;
+    int V = params.V;
+    int H = params.H;
+    int w1_size = V * H;
+    int w2_size = H * V;
+    int b1_size = H;
+
+    if (id < w1_size) {
+        int r = id / H;
+        int c = id % H;
+        float sum = 0.0;
+        for (int i = 0; i < B; i++) {
+            if (input_indices.data[i] == r)
+                sum += dW1_per.data[i * H + c];
+        }
+        W1.data[r * H + c] -= params.lr * sum * params.invB;
+    } else if (id < w1_size + w2_size) {
+        int id2 = id - w1_size;
+        int r = id2 / V;
+        int c = id2 % V;
+        float sum = 0.0;
+        for (int i = 0; i < B; i++)
+            sum += dW2_per.data[i * H * V + r * V + c];
+        W2.data[r * V + c] -= params.lr * sum * params.invB;
+    } else if (id < w1_size + w2_size + b1_size) {
+        int id2 = id - w1_size - w2_size;
+        float sum = 0.0;
+        for (int i = 0; i < B; i++)
+            sum += db1_per.data[i * H + id2];
+        b1.data[id2] -= params.lr * sum * params.invB;
+    } else {
+        int id2 = id - w1_size - w2_size - b1_size;
+        float sum = 0.0;
+        for (int i = 0; i < B; i++)
+            sum += db2_per.data[i * V + id2];
+        b2.data[id2] -= params.lr * sum * params.invB;
+    }
+}

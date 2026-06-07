@@ -1,0 +1,1262 @@
+fn fibonacci(n: u32) -> u32 {
+    match n {
+        0 => 0,
+        1 => 1,
+        _ => fibonacci(n - 1) + fibonacci(n - 2),
+    }
+}
+
+for (int i = 0; i < 10; i++) {
+    printf("hello world %d\n", i * 2 + 1);
+    if (i % 3 == 0) { break; }
+}
+
+const pi: f64 = 3.14159265358979323846;
+const e: f64 = 2.71828182845904523536;
+const sqrt2: f64 = 1.41421356237309504880;
+
+x = (-b ± sqrt(b² - 4ac)) / (2a)
+E = mc²
+F = G * (m1 * m2) / r²
+
+The Fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597.
+Prime numbers: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.
+
+SELECT * FROM users WHERE age > 18 ORDER BY name ASC LIMIT 10;
+INSERT INTO posts (title, body) VALUES ('Hello World', 'This is my first post!');
+CREATE TABLE orders (id INT PRIMARY KEY, customer_id INT, total DECIMAL(10,2));
+
+<a href="https://example.com">Click here</a>
+<body style="color: red; background: #000;">
+<div class="container" id="main">
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+</div>
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+
+class NeuralNetwork:
+    def __init__(self, input_size, hidden_size, output_size):
+        self.W1 = np.random.randn(input_size, hidden_size) * 0.01
+        self.b1 = np.zeros(hidden_size)
+        self.W2 = np.random.randn(hidden_size, output_size) * 0.01
+        self.b2 = np.zeros(output_size)
+    
+    def forward(self, x):
+        self.z1 = np.dot(x, self.W1) + self.b1
+        self.a1 = np.maximum(0, self.z1)  # ReLU
+        self.z2 = np.dot(self.a1, self.W2) + self.b2
+        exp_scores = np.exp(self.z2 - np.max(self.z2, axis=1, keepdims=True))
+        self.probs = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
+        return self.probs
+
+System.out.println("Hello, World!");
+System.exit(0);
+
+enum Color {
+    RED = 0xFF0000,
+    GREEN = 0x00FF00,
+    BLUE = 0x0000FF,
+}
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 42
+
+{"name": "Alice", "age": 30, "city": "New York"}
+
+GET /api/users HTTP/1.1
+Host: example.com
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+
+The first 10 powers of 2: 2^0=1, 2^1=2, 2^2=4, 2^3=8, 2^4=16, 2^5=32, 2^6=64, 2^7=128, 2^8=256, 2^9=512, 2^10=1024.
+The hexadecimal digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.
+Binary: 0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111.
+
+Dates: 2024-01-15, 1776-07-04, 1969-07-20, 2001-09-11, 2020-03-13.
+Times: 12:00:00, 23:59:59, 09:15, 14:30, 08:00 AM, 10:45 PM.
+IP addresses: 192.168.1.1, 10.0.0.1, 127.0.0.1, 8.8.8.8, 255.255.255.0.
+Email: user@example.com, admin@localhost, test@test.co.uk.
+URLs: https://github.com, https://stackoverflow.com, ftp://files.example.org.
+
+File permissions: rwxr-xr-x, -rw-r--r--, drwx------, lrwxrwxrwx.
+CSS colors: #FF5733, #00FF00, #0000FF, #FFFFFF, #000000, rgb(255, 0, 0), rgba(0, 255, 0, 0.5).
+Mathematical symbols: ∀ ∃ ∈ ∉ ⊂ ⊃ ∪ ∩ → ⇒ ⇔ ⊢ ⊨ ≡ ≅ ≈ ≠ ≤ ≥ ∞ ∂ ∇ ∑ ∏ √ ∛ ∜ ∫ ∮ ∯.
+Greek letters: α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω.
+Chemical formulas: H₂O, CO₂, CH₄, NaCl, C₆H₁₂O₆, H₂SO₄.
+
+function binarySearch(arr: number[], target: number): number {
+    let lo = 0, hi = arr.length - 1;
+    while (lo <= hi) {
+        const mid = (lo + hi) >>> 1;
+        if (arr[mid] === target) return mid;
+        if (arr[mid] < target) lo = mid + 1;
+        else hi = mid - 1;
+    }
+    return -1;
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace ChatApp {
+    class Program {
+        static async Task Main(string[] args) {
+            var server = new ChatServer();
+            await server.StartAsync();
+        }
+    }
+}
+
+table.insert(t, {name = "Alice", score = 42})
+for i = 1, 10 do
+    print("iteration " .. i)
+end
+
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+numbers.stream()
+    .filter(n -> n % 2 == 0)
+    .map(n -> n * n)
+    .forEach(System.out::println);
+
+$ curl -X POST https://api.openai.com/v1/completions \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"model": "gpt-4", "prompt": "Hello", "max_tokens": 50}'
+
+// ANSI escape codes
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[32m"
+#define YELLOW  "\033[33m"
+#define BLUE    "\033[34m"
+#define MAGENTA "\033[35m"
+#define CYAN    "\033[36m"
+#define BOLD    "\033[1m"
+
+24-hour clock: 00:00, 06:30, 12:15, 18:45, 23:59.
+Unix timestamps: 0, 1234567890, 1700000000, 2147483647.
+IPv6: ::1, fe80::1, 2001:db8::ff00:42:8329, 2607:f8b0:4000:800::200e.
+MIME types: text/html, application/json, image/png, multipart/form-data.
+
+THE END
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <pthread.h>
+#include <unistd.h>
+
+typedef struct {
+    int x, y;
+    int w, h;
+} Rect;
+
+Rect rect_new(int x, int y, int w, int h) {
+    Rect r = {x, y, w, h};
+    return r;
+}
+
+int rect_area(Rect* r) {
+    return r->w * r->h;
+}
+
+void* worker_thread(void* arg) {
+    int* id = (int*)arg;
+    printf("Thread %d starting\n", *id);
+    for (int i = 0; i < 5; i++) {
+        sleep(1);
+        printf("Thread %d: iteration %d\n", *id, i);
+    }
+    return NULL;
+}
+
+int main(int argc, char** argv) {
+    pthread_t threads[4];
+    int ids[4];
+    for (int i = 0; i < 4; i++) {
+        ids[i] = i;
+        pthread_create(&threads[i], NULL, worker_thread, &ids[i]);
+    }
+    for (int i = 0; i < 4; i++) {
+        pthread_join(threads[i], NULL);
+    }
+    printf("All threads done\n");
+    return 0;
+}
+
+CXX = g++
+CXXFLAGS = -std=c++20 -Wall -O2 -march=native
+LDFLAGS = -lvulkan -lglfw -lpthread
+SRCS = main.cpp renderer.cpp vulkan-core.cpp
+OBJS = $(SRCS:.cpp=.o)
+TARGET = app
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+.PHONY: all clean
+
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+from torch.utils.data import DataLoader, Dataset
+import torchvision
+import torchvision.transforms as T
+import numpy as np
+import pandas as pd
+from PIL import Image
+import matplotlib.pyplot as plt
+import pygame
+import sys
+import os
+
+class TransformerBlock(nn.Module):
+    def __init__(self, d_model, n_heads, d_ff, dropout=0.1):
+        super().__init__()
+        self.attn = nn.MultiheadAttention(d_model, n_heads, dropout=dropout, batch_first=True)
+        self.ff = nn.Sequential(
+            nn.Linear(d_model, d_ff),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(d_ff, d_model),
+            nn.Dropout(dropout),
+        )
+        self.ln1 = nn.LayerNorm(d_model)
+        self.ln2 = nn.LayerNorm(d_model)
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x, mask=None):
+        x = x + self.dropout(self.attn(self.ln1(x), self.ln1(x), self.ln1(x), attn_mask=mask)[0])
+        x = x + self.ff(self.ln2(x))
+        return x
+
+class GPT(nn.Module):
+    def __init__(self, vocab_size, d_model=512, n_heads=8, n_layers=6, d_ff=2048, max_len=1024):
+        super().__init__()
+        self.token_embed = nn.Embedding(vocab_size, d_model)
+        self.pos_embed = nn.Embedding(max_len, d_model)
+        self.blocks = nn.ModuleList([
+            TransformerBlock(d_model, n_heads, d_ff) for _ in range(n_layers)
+        ])
+        self.ln_f = nn.LayerNorm(d_model)
+        self.lm_head = nn.Linear(d_model, vocab_size, bias=False)
+        self.token_embed.weight = self.lm_head.weight
+
+    def forward(self, x):
+        B, T = x.shape
+        pos = torch.arange(0, T, device=x.device).unsqueeze(0)
+        x = self.token_embed(x) + self.pos_embed(pos)
+        mask = torch.triu(torch.ones(T, T, device=x.device) * float('-inf'), diagonal=1)
+        for block in self.blocks:
+            x = block(x, mask)
+        x = self.ln_f(x)
+        logits = self.lm_head(x)
+        return logits
+
+def train_gpt():
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = GPT(vocab_size=10000).to(device)
+    optimizer = optim.AdamW(model.parameters(), lr=3e-4, weight_decay=0.1)
+    scheduler = optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=100)
+    
+    for epoch in range(100):
+        for batch in dataloader:
+            x, y = batch
+            x, y = x.to(device), y.to(device)
+            logits = model(x)
+            loss = F.cross_entropy(logits.view(-1, logits.size(-1)), y.view(-1))
+            optimizer.zero_grad()
+            loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
+            optimizer.step()
+        scheduler.step()
+        print(f"Epoch {epoch}: loss={loss.item():.4f}")
+    torch.save(model.state_dict(), 'gpt.pt')
+
+pygame.init()
+screen = pygame.display.set_mode((800, 600))
+clock = pygame.time.Clock()
+font = pygame.font.SysFont('Arial', 24)
+running = True
+
+class Player:
+    def __init__(self, x, y):
+        self.rect = pygame.Rect(x, y, 32, 32)
+        self.vx = 0
+        self.vy = 0
+        self.speed = 5
+    
+    def update(self, keys):
+        self.vx = 0
+        self.vy = 0
+        if keys[pygame.K_LEFT]: self.vx = -self.speed
+        if keys[pygame.K_RIGHT]: self.vx = self.speed
+        if keys[pygame.K_UP]: self.vy = -self.speed
+        if keys[pygame.K_DOWN]: self.vy = self.speed
+        self.rect.x += self.vx
+        self.rect.y += self.vy
+    
+    def draw(self, surface):
+        pygame.draw.rect(surface, (0, 255, 0), self.rect)
+
+player = Player(400, 300)
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    
+    keys = pygame.key.get_pressed()
+    player.update(keys)
+    
+    screen.fill((0, 0, 0))
+    player.draw(screen)
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+df = pd.read_csv('data.csv')
+print(df.head())
+print(df.describe())
+print(df.info())
+
+df = df.dropna()
+X = df.drop('target', axis=1).values
+y = df['target'].values
+
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+
+img = Image.new('RGB', (512, 512), color='white')
+draw = ImageDraw.Draw(img)
+
+draw.rectangle([50, 50, 200, 200], fill='red', outline='black', width=3)
+draw.ellipse([250, 50, 400, 200], fill='blue', outline='black', width=3)
+draw.line([50, 300, 450, 300], fill='green', width=5)
+draw.text((50, 350), "Hello PIL!", fill='black', font=ImageFont.load_default())
+
+img_blur = img.filter(ImageFilter.GaussianBlur(radius=5))
+img.save('output.png')
+
+#include <GLFW/glfw3.h>
+#include <GLAD/glad.h>
+#include <iostream>
+
+const char* vertex_shader = R"(
+#version 460 core
+layout(location = 0) in vec3 aPos;
+layout(location = 1) in vec3 aColor;
+out vec3 fragColor;
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+void main() {
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+    fragColor = aColor;
+}
+)";
+
+const char* fragment_shader = R"(
+#version 460 core
+in vec3 fragColor;
+out vec4 outColor;
+void main() {
+    outColor = vec4(fragColor, 1.0);
+}
+)";
+
+GLuint compile_shader(GLenum type, const char* src) {
+    GLuint shader = glCreateShader(type);
+    glShaderSource(shader, 1, &src, NULL);
+    glCompileShader(shader);
+    GLint success;
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+    if (!success) {
+        char log[512];
+        glGetShaderInfoLog(shader, 512, NULL, log);
+        std::cerr << "Shader error: " << log << std::endl;
+    }
+    return shader;
+}
+
+GLuint create_program(const char* vs, const char* fs) {
+    GLuint vert = compile_shader(GL_VERTEX_SHADER, vs);
+    GLuint frag = compile_shader(GL_FRAGMENT_SHADER, fs);
+    GLuint prog = glCreateProgram();
+    glAttachShader(prog, vert);
+    glAttachShader(prog, frag);
+    glLinkProgram(prog);
+    glDeleteShader(vert);
+    glDeleteShader(frag);
+    return prog;
+}
+
+int main() {
+    if (!glfwInit()) { std::cerr << "GLFW fail\n"; return -1; }
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    
+    GLFWwindow* win = glfwCreateWindow(800, 600, "GLFW", NULL, NULL);
+    if (!win) { std::cerr << "Window fail\n"; glfwTerminate(); return -1; }
+    glfwMakeContextCurrent(win);
+    gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+    
+    GLuint prog = create_program(vertex_shader, fragment_shader);
+    
+    float verts[] = {
+        -0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,
+         0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,
+         0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f
+    };
+    GLuint VAO, VBO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(verts), verts, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6*sizeof(float), (void*)(3*sizeof(float)));
+    glEnableVertexAttribArray(1);
+    
+    while (!glfwWindowShouldClose(win)) {
+        glClear(GL_COLOR_BUFFER_BIT);
+        glUseProgram(prog);
+        glBindVertexArray(VAO);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glfwSwapBuffers(win);
+        glfwPollEvents();
+    }
+    glfwTerminate();
+    return 0;
+}
+
+#version 460 core
+layout(local_size_x = 16, local_size_y = 16, local_size_z = 1) in;
+
+layout(set = 0, binding = 0) readonly buffer MatrixA { float A[]; };
+layout(set = 0, binding = 1) readonly buffer MatrixB { float B[]; };
+layout(set = 0, binding = 2) writeonly buffer MatrixC { float C[]; };
+
+layout(push_constant) uniform Params {
+    uint M, K, N;
+} params;
+
+shared float tileA[16][16];
+shared float tileB[16][16];
+
+void main() {
+    uint row = gl_GlobalInvocationID.y;
+    uint col = gl_GlobalInvocationID.x;
+    uint localRow = gl_LocalInvocationID.y;
+    uint localCol = gl_LocalInvocationID.x;
+    
+    float sum = 0.0;
+    uint numTiles = (params.K + 15) / 16;
+    
+    for (uint t = 0; t < numTiles; t++) {
+        uint idxA = row * params.K + t * 16 + localCol;
+        uint idxB = (t * 16 + localRow) * params.N + col;
+        
+        if (row < params.M && t * 16 + localCol < params.K)
+            tileA[localRow][localCol] = A[idxA];
+        else
+            tileA[localRow][localCol] = 0.0;
+            
+        if (t * 16 + localRow < params.K && col < params.N)
+            tileB[localRow][localCol] = B[idxB];
+        else
+            tileB[localRow][localCol] = 0.0;
+        
+        barrier();
+        
+        for (uint k = 0; k < 16; k++) {
+            sum += tileA[localRow][k] * tileB[k][localCol];
+        }
+        barrier();
+    }
+    
+    if (row < params.M && col < params.N) {
+        C[row * params.N + col] = sum;
+    }
+}
+
+#include <vulkan/vulkan.h>
+#include <GLFW/glfw3.h>
+#include <vector>
+#include <iostream>
+
+struct VulkanContext {
+    VkInstance instance;
+    VkPhysicalDevice physDev;
+    VkDevice device;
+    VkQueue queue;
+    VkCommandPool cmdPool;
+    VkRenderPass renderPass;
+    VkPipelineLayout pipelineLayout;
+    VkPipeline pipeline;
+    VkSwapchainKHR swapchain;
+    std::vector<VkImage> swapchainImages;
+    std::vector<VkImageView> swapchainViews;
+    std::vector<VkFramebuffer> framebuffers;
+    VkCommandBuffer cmdBuffer;
+    VkSemaphore semImageReady, semRenderDone;
+    VkFence fence;
+
+    void createInstance() {
+        VkApplicationInfo appInfo = {VK_STRUCTURE_TYPE_APPLICATION_INFO};
+        appInfo.pApplicationName = "Vulkan App";
+        appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
+        appInfo.apiVersion = VK_API_VERSION_1_3;
+        
+        VkInstanceCreateInfo createInfo = {VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO};
+        createInfo.pApplicationInfo = &appInfo;
+        
+        uint32_t glfwExtCount = 0;
+        const char** glfwExts = glfwGetRequiredInstanceExtensions(&glfwExtCount);
+        createInfo.enabledExtensionCount = glfwExtCount;
+        createInfo.ppEnabledExtensionNames = glfwExts;
+        
+        vkCreateInstance(&createInfo, nullptr, &instance);
+    }
+
+    void pickPhysicalDevice() {
+        uint32_t count = 0;
+        vkEnumeratePhysicalDevices(instance, &count, nullptr);
+        std::vector<VkPhysicalDevice> devices(count);
+        vkEnumeratePhysicalDevices(instance, &count, devices.data());
+        physDev = devices[0];
+        
+        VkPhysicalDeviceProperties props;
+        vkGetPhysicalDeviceProperties(physDev, &props);
+        std::cout << "GPU: " << props.deviceName << std::endl;
+    }
+
+    void createLogicalDevice() {
+        float priority = 1.0f;
+        VkDeviceQueueCreateInfo queueInfo = {VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO};
+        queueInfo.queueFamilyIndex = 0;
+        queueInfo.queueCount = 1;
+        queueInfo.pQueuePriorities = &priority;
+        
+        const char* exts[] = {VK_KHR_SWAPCHAIN_EXTENSION_NAME};
+        VkDeviceCreateInfo createInfo = {VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO};
+        createInfo.queueCreateInfoCount = 1;
+        createInfo.pQueueCreateInfos = &queueInfo;
+        createInfo.enabledExtensionCount = 1;
+        createInfo.ppEnabledExtensionNames = exts;
+        
+        vkCreateDevice(physDev, &createInfo, nullptr, &device);
+        vkGetDeviceQueue(device, 0, 0, &queue);
+    }
+};
+
+int main() {
+    glfwInit();
+    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+    GLFWwindow* window = glfwCreateWindow(800, 600, "Vulkan", nullptr, nullptr);
+    
+    VulkanContext ctx;
+    ctx.createInstance();
+    ctx.pickPhysicalDevice();
+    ctx.createLogicalDevice();
+    
+    VkSurfaceKHR surface;
+    glfwCreateWindowSurface(ctx.instance, window, nullptr, &surface);
+    
+    while (!glfwWindowShouldClose(window)) {
+        glfwPollEvents();
+    }
+    
+    vkDestroySurfaceKHR(ctx.instance, surface, nullptr);
+    vkDestroyDevice(ctx.device, nullptr);
+    vkDestroyInstance(ctx.instance, nullptr);
+    glfwDestroyWindow(window);
+    glfwTerminate();
+    return 0;
+}
+
+#include <wayland-client.h>
+#include <wayland-client-protocol.h>
+#include <iostream>
+
+struct WaylandState {
+    struct wl_display* display;
+    struct wl_registry* registry;
+    struct wl_compositor* compositor;
+    struct wl_surface* surface;
+    struct wl_shell* shell;
+    struct wl_shell_surface* shellSurface;
+};
+
+static void registry_global(void* data, struct wl_registry* reg, uint32_t name,
+                            const char* interface, uint32_t version) {
+    auto* state = (WaylandState*)data;
+    if (strcmp(interface, wl_compositor_interface.name) == 0) {
+        state->compositor = (wl_compositor*)wl_registry_bind(reg, name, &wl_compositor_interface, 1);
+    } else if (strcmp(interface, wl_shell_interface.name) == 0) {
+        state->shell = (wl_shell*)wl_registry_bind(reg, name, &wl_shell_interface, 1);
+    }
+}
+
+static const struct wl_registry_listener registry_listener = {registry_global};
+
+int main() {
+    WaylandState state = {};
+    state.display = wl_display_connect(NULL);
+    if (!state.display) { std::cerr << "Wayland connect fail\n"; return 1; }
+    
+    state.registry = wl_display_get_registry(state.display);
+    wl_registry_add_listener(state.registry, &registry_listener, &state);
+    wl_display_roundtrip(state.display);
+    
+    state.surface = wl_compositor_create_surface(state.compositor);
+    state.shellSurface = wl_shell_get_shell_surface(state.shell, state.surface);
+    wl_shell_surface_set_toplevel(state.shellSurface);
+    
+    while (wl_display_dispatch(state.display) != -1) {}
+    
+    wl_display_disconnect(state.display);
+    return 0;
+}
+
+# Hyprland configuration example
+# ~/.config/hypr/hyprland.conf
+
+monitor=,preferred,auto,1
+
+exec-once = waybar & hyprpaper & dunst
+
+input {
+    kb_layout = us
+    kb_variant =
+    kb_options =
+    follow_mouse = 1
+    touchpad {
+        natural_scroll = yes
+        tap-to-click = yes
+    }
+}
+
+general {
+    gaps_in = 5
+    gaps_out = 10
+    border_size = 2
+    col.active_border = rgba(33ccffee)
+    col.inactive_border = rgba(595959aa)
+    layout = dwindle
+}
+
+decoration {
+    rounding = 10
+    blur = yes
+    blur_size = 3
+    blur_passes = 1
+    drop_shadow = yes
+    shadow_range = 4
+    shadow_render_power = 3
+    col.shadow = rgba(1a1a1aee)
+}
+
+animations {
+    enabled = yes
+    bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+    animation = windows, 1, 7, myBezier
+    animation = windowsOut, 1, 7, default
+    animation = fade, 1, 7, default
+    animation = workspaces, 1, 6, default
+}
+
+windowrule = float, title:Calculator
+windowrule = float, title:pinentry
+windowrule = opacity 0.8 override 0.8 override, class:Alacritty
+windowrulev2 = opacity 0.9 0.7, class:^(firefox)$
+
+bind = SUPER, Return, exec, alacritty
+bind = SUPER, Q, killactive
+bind = SUPER, M, exit
+bind = SUPER, E, exec, thunar
+bind = SUPER, V, togglefloating
+bind = SUPER, R, exec, wofi --show drun
+bind = SUPER, P, pseudo
+bind = SUPER, J, togglesplit
+bind = SUPER, 1, workspace, 1
+bind = SUPER, 2, workspace, 2
+bind = SUPER_SHIFT, 1, movetoworkspace, 1
+bind = SUPER, mouse:272, movewindow
+bind = SUPER, mouse:273, resizewindow
+bind = , XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
+bind = , XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
+bind = , XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+
+
+
+
+=== LearnOpenGL - Basic Lighting ===
+
+Lighting in the real world is extremely complicated and depends on way too many factors, something we can't afford to calculate on the limited processing power we have. Lighting in OpenGL is therefore based on approximations of reality using simplified models that are much easier to process and look relatively similar. These lighting models are based on the physics of light as we understand it. One of those models is called the Phong lighting model. The major building blocks of the Phong lighting model consist of 3 components: ambient, diffuse and specular lighting.
+
+Ambient lighting: even when it is dark there is usually still some light somewhere in the world (the moon, a distant light) so objects are almost never completely dark. To simulate this we use an ambient lighting constant that always gives the object some color.
+Diffuse lighting: simulates the directional impact a light object has on an object. This is the most visually significant component of the lighting model. The more a part of an object faces the light source, the brighter it becomes.
+Specular lighting: simulates the bright spot of a light that appears on shiny objects. Specular highlights are more inclined to the color of the light than the color of the object.
+
+Light usually does not come from a single light source, but from many light sources scattered all around us, even when they're not immediately visible. One of the properties of light is that it can scatter and bounce in many directions, reaching spots that aren't directly visible; light can thus reflect on other surfaces and have an indirect impact on the lighting of an object. Algorithms that take this into consideration are called global illumination algorithms, but these are complicated and expensive to calculate.
+
+void main()
+{
+    float ambientStrength = 0.1;
+    vec3 ambient = ambientStrength * lightColor;
+    vec3 result = ambient * objectColor;
+    FragColor = vec4(result, 1.0);
+}
+
+Ambient lighting by itself doesn't produce the most interesting results, but diffuse lighting however will start to give a significant visual impact on the object. Diffuse lighting gives the object more brightness the closer its fragments are aligned to the light rays from a light source.
+
+We need to measure at what angle the light ray touches the fragment. If the light ray is perpendicular to the object's surface the light has the greatest impact. To measure the angle between the light ray and the fragment we use something called a normal vector, that is a vector perpendicular to the fragment's surface. The angle between the two vectors can then easily be calculated with the dot product.
+
+What do we need to calculate diffuse lighting:
+Normal vector: a vector that is perpendicular to the vertex' surface.
+The directed light ray: a direction vector that is the difference vector between the light's position and the fragment's position.
+
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aNormal;
+
+out vec3 Normal;
+void main()
+{
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+    Normal = aNormal;
+}
+
+in vec3 Normal;
+uniform vec3 lightPos;
+
+vec3 norm = normalize(Normal);
+vec3 lightDir = normalize(lightPos - FragPos);
+float diff = max(dot(norm, lightDir), 0.0);
+vec3 diffuse = diff * lightColor;
+
+vec3 result = (ambient + diffuse) * objectColor;
+FragColor = vec4(result, 1.0);
+
+Normal vectors are only direction vectors and do not represent a specific position in space. Normal vectors do not have a homogeneous coordinate. This means that translations should not have any effect on the normal vectors. So if we want to multiply the normal vectors with a model matrix we want to remove the translation part of the matrix by taking the upper-left 3x3 matrix of the model matrix.
+
+If the model matrix would perform a non-uniform scale, the vertices would be changed in such a way that the normal vector is not perpendicular to the surface anymore. The trick of fixing this behavior is to use a different model matrix specifically tailored for normal vectors. This matrix is called the normal matrix. The normal matrix is defined as 'the transpose of the inverse of the upper-left 3x3 part of the model matrix'.
+
+Normal = mat3(transpose(inverse(model))) * aNormal;
+
+Specular lighting is based on the light's direction vector and the object's normal vectors, but this time it is also based on the view direction e.g. from what direction the player is looking at the fragment. Specular lighting is based on the reflective properties of surfaces.
+
+float specularStrength = 0.5;
+vec3 viewDir = normalize(viewPos - FragPos);
+vec3 reflectDir = reflect(-lightDir, norm);
+float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32);
+vec3 specular = specularStrength * spec * lightColor;
+
+vec3 result = (ambient + diffuse + specular) * objectColor;
+FragColor = vec4(result, 1.0);
+
+When the Phong lighting model is implemented in the vertex shader it is called Gouraud shading instead of Phong shading. Due to the interpolation the lighting looks somewhat off. The Phong shading gives much smoother lighting results.
+
+
+=== LearnOpenGL - Shaders ===
+
+Shaders are little programs that rest on the GPU. These programs are run for each specific section of the graphics pipeline. In a basic sense, shaders are nothing more than programs transforming inputs to outputs. Shaders are also very isolated programs in that they're not allowed to communicate with each other; the only communication they have is via their inputs and outputs.
+
+Shaders are written in the C-like language GLSL. GLSL is tailored for use with graphics and contains useful features specifically targeted at vector and matrix manipulation. Shaders always begin with a version declaration, followed by a list of input and output variables, uniforms and its main function.
+
+#version version_number
+in type in_variable_name;
+in type in_variable_name;
+out type out_variable_name;
+uniform type uniform_name;
+void main()
+{
+    // process input(s) and do some weird graphics stuff
+    out_variable_name = weird_stuff_we_processed;
+}
+
+GLSL data types: int, float, double, uint and bool. GLSL also features vectors and matrices. A vector in GLSL is a 2,3 or 4 component container. vecn: the default vector of n floats. bvecn: a vector of n booleans. ivecn: a vector of n integers. uvecn: a vector of n unsigned integers. dvecn: a vector of n double components.
+
+Components of a vector can be accessed via vec.x where x is the first component. You can use .x, .y, .z and .w to access their first, second, third and fourth component respectively. GLSL also allows you to use rgba for colors or stpq for texture coordinates.
+
+The vector datatype allows for interesting and flexible component selection called swizzling:
+vec2 someVec;
+vec4 differentVec = someVec.xyxx;
+vec3 anotherVec = differentVec.zyw;
+vec4 otherVec = someVec.xxxx + anotherVec.yxzy;
+
+Uniforms are another way to pass data from our application on the CPU to the shaders on the GPU. Uniforms are global. A uniform variable is unique per shader program object, and can be accessed from any shader at any stage in the shader program. Whatever you set the uniform value to, uniforms will keep their values until they're either reset or updated.
+
+uniform vec4 ourColor;
+void main()
+{
+    FragColor = ourColor;
+}
+
+int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+glUseProgram(shaderProgram);
+glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+
+Vertex attributes: we can pass per-vertex data. Each vertex attribute takes its data from memory managed by a VBO.
+
+float vertices[] = {
+    // positions         // colors
+     0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // bottom right
+    -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f,   // bottom left
+     0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // top
+};
+
+#version 330 core
+layout (location = 0) in vec3 aPos;
+layout (location = 1) in vec3 aColor;
+out vec3 ourColor;
+void main()
+{
+    gl_Position = vec4(aPos, 1.0);
+    ourColor = aColor;
+}
+
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+glEnableVertexAttribArray(0);
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3* sizeof(float)));
+glEnableVertexAttribArray(1);
+
+Fragment interpolation: when rendering a triangle the rasterization stage usually results in a lot more fragments than vertices originally specified. The rasterizer determines the positions of each of those fragments based on where they reside on the triangle shape. Based on these positions, it interpolates all the fragment shader's input variables.
+
+
+=== LearnOpenGL - Textures ===
+
+A texture is a 2D image (even 1D and 3D textures exist) used to add detail to an object; think of a texture as a piece of paper with a nice brick image neatly folded over your 3D house. Because we can insert a lot of detail in a single image, we can give the illusion the object is extremely detailed without having to specify extra vertices.
+
+Texture coordinates range from 0 to 1 in the x and y axis. Retrieving the texture color using texture coordinates is called sampling. Texture coordinates start at (0,0) for the lower left corner of a texture image to (1,1) for the upper right corner.
+
+float texCoords[] = {
+    0.0f, 0.0f,  // lower-left corner
+    1.0f, 0.0f,  // lower-right corner
+    0.5f, 1.0f   // top-center corner
+};
+
+Texture Wrapping options:
+GL_REPEAT: The default behavior for textures. Repeats the texture image.
+GL_MIRRORED_REPEAT: Same as GL_REPEAT but mirrors the image with each repeat.
+GL_CLAMP_TO_EDGE: Clamps the coordinates between 0 and 1. The result is that higher coordinates become clamped to the edge, resulting in a stretched edge pattern.
+GL_CLAMP_TO_BORDER: Coordinates outside the range are now given a user-specified border color.
+
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
+
+Texture Filtering:
+GL_NEAREST (nearest neighbor or point filtering): selects the texel that center is closest to the texture coordinate.
+GL_LINEAR ((bi)linear filtering): takes an interpolated value from the texture coordinate's neighboring texels.
+
+Mipmaps: a collection of texture images where each subsequent texture is twice as small compared to the previous one. After a certain distance threshold from the viewer, OpenGL will use a different mipmap texture that best suits the distance to the object.
+
+stb_image.h is a very popular single header image loading library by Sean Barrett.
+
+int width, height, nrChannels;
+unsigned char *data = stbi_load("container.jpg", &width, &height, &nrChannels, 0);
+
+unsigned int texture;
+glGenTextures(1, &texture);
+glBindTexture(GL_TEXTURE_2D, texture);
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+glGenerateMipmap(GL_TEXTURE_2D);
+stbi_image_free(data);
+
+Fragment shader with texture:
+#version 330 core
+out vec4 FragColor;
+in vec3 ourColor;
+in vec2 TexCoord;
+uniform sampler2D ourTexture;
+void main()
+{
+    FragColor = texture(ourTexture, TexCoord);
+}
+
+Texture Units: allow us to use more than 1 texture in our shaders. By assigning texture units to the samplers, we can bind to multiple textures at once.
+
+glActiveTexture(GL_TEXTURE0);
+glBindTexture(GL_TEXTURE_2D, texture1);
+glActiveTexture(GL_TEXTURE1);
+glBindTexture(GL_TEXTURE_2D, texture2);
+
+
+=== LearnOpenGL - Hello Triangle ===
+
+In OpenGL everything is in 3D space, but the screen or window is a 2D array of pixels so a large part of OpenGL's work is about transforming all 3D coordinates to 2D pixels that fit on your screen. The process of transforming 3D coordinates to 2D pixels is managed by the graphics pipeline of OpenGL.
+
+The graphics pipeline takes as input a set of 3D coordinates and transforms these to colored 2D pixels on your screen. The graphics pipeline can be divided into several steps where each step requires the output of the previous step as its input. All of these steps are highly specialized and can easily be executed in parallel.
+
+The first part of the pipeline is the vertex shader that takes as input a single vertex. The main purpose of the vertex shader is to transform 3D coordinates into different 3D coordinates.
+
+The primitive assembly stage takes as input all the vertices from the vertex shader that form one or more primitives and assembles all the point(s) in the primitive shape given.
+
+The output of the primitive assembly stage is then passed on to the rasterization stage where it maps the resulting primitive(s) to the corresponding pixels on the final screen, resulting in fragments for the fragment shader to use.
+
+The main purpose of the fragment shader is to calculate the final color of a pixel and this is usually the stage where all the advanced OpenGL effects occur.
+
+Normalized Device Coordinates (NDC): a small space where the x, y and z values vary from -1.0 to 1.0. Any coordinates that fall outside this range will be discarded/clipped and won't be visible on your screen.
+
+float vertices[] = {
+    -0.5f, -0.5f, 0.0f,
+     0.5f, -0.5f, 0.0f,
+     0.0f,  0.5f, 0.0f
+};
+
+Vertex Buffer Objects (VBO) can store a large number of vertices in the GPU's memory. The advantage of using those buffer objects is that we can send large batches of data all at once to the graphics card.
+
+unsigned int VBO;
+glGenBuffers(1, &VBO);
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+GL_STREAM_DRAW: the data is set only once and used by the GPU at most a few times.
+GL_STATIC_DRAW: the data is set only once and used many times.
+GL_DYNAMIC_DRAW: the data is changed a lot and used many times.
+
+Vertex shader GLSL:
+#version 330 core
+layout (location = 0) in vec3 aPos;
+void main()
+{
+    gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
+}
+
+Fragment shader GLSL:
+#version 330 core
+out vec4 FragColor;
+void main()
+{
+    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);
+}
+
+Shader program: the final linked version of multiple shaders combined.
+
+unsigned int shaderProgram;
+shaderProgram = glCreateProgram();
+glAttachShader(shaderProgram, vertexShader);
+glAttachShader(shaderProgram, fragmentShader);
+glLinkProgram(shaderProgram);
+glUseProgram(shaderProgram);
+
+Vertex Array Object (VAO) stores vertex attribute configurations. When configuring vertex attribute pointers you only have to make those calls once and whenever we want to draw the object, we can just bind the corresponding VAO.
+
+unsigned int VAO;
+glGenVertexArrays(1, &VAO);
+glBindVertexArray(VAO);
+
+glDrawArrays(GL_TRIANGLES, 0, 3);
+
+Element Buffer Objects (EBO) store indices that OpenGL uses to decide what vertices to draw. We store only the unique vertices and then specify the order at which we want to draw these vertices.
+
+float vertices[] = {
+     0.5f,  0.5f, 0.0f,  // top right
+     0.5f, -0.5f, 0.0f,  // bottom right
+    -0.5f, -0.5f, 0.0f,  // bottom left
+    -0.5f,  0.5f, 0.0f   // top left
+};
+unsigned int indices[] = {
+    0, 1, 3,   // first triangle
+    1, 2, 3    // second triangle
+};
+
+unsigned int EBO;
+glGenBuffers(1, &EBO);
+glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+
+=== LearnOpenGL - PBR Lighting ===
+
+Physically Based Rendering (PBR) refers to a collection of rendering techniques that are more or less based on the same underlying theory that more closely matches that of the physical world.
+
+The reflectance equation:
+Lo(p, wo) = integral_over_Omega (kd * c/pi + D*F*G / (4*(wo.n)*(wi.n))) * Li(p,wi) * n.wi * dwi
+
+The Fresnel-Schlick approximation:
+F0 + (1.0 - F0) * pow(clamp(1.0 - cosTheta, 0.0, 1.0), 5.0)
+
+vec3 F0 = vec3(0.04);
+F0 = mix(F0, albedo, metallic);
+
+The Normal Distribution Function (NDF) D approximates the amount the surface's microfacets are aligned to the halfway vector, influenced by the roughness of the surface.
+
+float DistributionGGX(vec3 N, vec3 H, float roughness)
+{
+    float a = roughness*roughness;
+    float a2 = a*a;
+    float NdotH = max(dot(N, H), 0.0);
+    float NdotH2 = NdotH*NdotH;
+    float num = a2;
+    float denom = (NdotH2 * (a2 - 1.0) + 1.0);
+    denom = PI * denom * denom;
+    return num / denom;
+}
+
+The Geometry function G describes the self-shadowing property of microfacets. When a surface is relatively rough, the surface's microfacets can overshadow other microfacets thereby reducing the light the surface reflects.
+
+float GeometrySchlickGGX(float NdotV, float roughness)
+{
+    float r = (roughness + 1.0);
+    float k = (r*r) / 8.0;
+    float num = NdotV;
+    float denom = NdotV * (1.0 - k) + k;
+    return num / denom;
+}
+
+float GeometrySmith(vec3 N, vec3 V, vec3 L, float roughness)
+{
+    float NdotV = max(dot(N, V), 0.0);
+    float NdotL = max(dot(N, L), 0.0);
+    float ggx2 = GeometrySchlickGGX(NdotV, roughness);
+    float ggx1 = GeometrySchlickGGX(NdotL, roughness);
+    return ggx1 * ggx2;
+}
+
+The Cook-Torrance BRDF:
+vec3 numerator = NDF * G * F;
+float denominator = 4.0 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.0001;
+vec3 specular = numerator / denominator;
+
+vec3 kS = F;
+vec3 kD = vec3(1.0) - kS;
+kD *= 1.0 - metallic;
+Lo += (kD * albedo / PI + specular) * radiance * NdotL;
+
+Tone mapping and gamma correction:
+color = color / (color + vec3(1.0));
+color = pow(color, vec3(1.0/2.2));
+
+
+
+
+
+
+=== Vulkan Tutorial - Introduction ===
+
+Vulkan is an API by the Khronos group that provides a much better abstraction of modern graphics cards. This new interface allows you to better describe what your application intends to do, which can lead to better performance and less surprising driver behavior compared to existing APIs like OpenGL and Direct3D. The ideas behind Vulkan are similar to those of Direct3D 12 and Metal, but Vulkan has the advantage of being fully cross-platform and allows you to develop for Windows, Linux and Android at the same time.
+
+The price you pay for these benefits is that you have to work with a significantly more verbose and nuanced API. Every detail related to the graphics API needs to be set up by your application, including initial framebuffer creation and memory management for objects like buffers and texture images. The graphics driver will do a lot less hand holding, which means that you will have to do more work in your application to ensure correct behavior.
+
+Vulkan reduces the driver overhead by allowing programmers to clearly specify their intent using a more feature-full yet verbose API, and allows multiple threads to create and submit commands in parallel. It reduces inconsistencies in shader compilation by switching to a standardized byte code format (SPIR-V) with a single compiler. It acknowledges the general purpose processing capabilities of modern graphics cards by unifying the graphics and compute functionality into a single API.
+
+Key Vulkan concepts:
+- Instance and physical device selection: create a vkInstance, query for Vulkan supported hardware and select one or more vkPhysicalDevices.
+- Logical device and queue families: create a vkDevice (logical device), specify which queue families to use. Queues are allocated from queue families, where each queue family supports a specific set of operations.
+- Window surface and swap chain: VkSurfaceKHR is a cross-platform abstraction over windows. VkSwapchainKHR is a collection of render targets ensuring the image being rendered is different from the one on screen.
+- Image views and dynamic rendering: wrap swap chain images into VkImageView. Dynamic rendering (Vulkan 1.3) eliminates the need for predefined render passes and framebuffers.
+- Graphics pipeline: VkPipeline describes the configurable state of the graphics card. Almost all configuration must be set in advance.
+- Command pools and command buffers: operations need to be recorded into a VkCommandBuffer before they can be submitted. Command buffers are allocated from a VkCommandPool.
+
+Drawing a triangle requires:
+1. Create an Instance
+2. Select a supported PhysicalDevice
+3. Create a Device and Queue for drawing and presentation
+4. Create a window, window surface and swap chain
+5. Wrap the swap chain images into VkImageView
+6. Set up dynamic rendering
+7. Set up the graphics pipeline
+8. Allocate and record a command buffer with draw commands
+9. Draw frames by acquiring images, submitting command buffers, and presenting
+
+Object creation pattern:
+vk::XXXCreateInfo createInfo{};
+createInfo.sType = vk::StructureType::eXXXCreateInfo;
+createInfo.pNext = nullptr;
+vk::XXX object;
+try {
+    object = device.createXXX(createInfo);
+} catch (vk::SystemError& err) {
+    std::cerr << "Failed: " << err.what() << std::endl;
+}
+
+Validation layers allow you to enable extensive checks during development. They are pieces of code that can be inserted between the API and the graphics driver to run extra checks on function parameters and track memory management problems. You can enable them during development and completely disable them when releasing your application for zero overhead.
+
+
+=== Vulkan Guide - Depth Buffer ===
+
+In 3D graphics, to make sure that you don't render things that are behind other things on top, you use a depth buffer and use z-testing. By having a depth buffer bound to the renderpass, you can enable z-testing which will allow proper rendering of 3D objects.
+
+VkImageCreateInfo holds image parameters like imageType (1D, 2D, or 3D), format, extent (size in pixels), mipLevels, arrayLayers, samples (MSAA), tiling, and usage flags.
+
+VK_IMAGE_TILING_OPTIMAL lets the driver decide how the GPU arranges the memory of the image. With OPTIMAL tiling, it won't be possible to read the data from CPU without changing its tiling first.
+VK_IMAGE_TILING_LINEAR stores the image as a 2D array of pixels. While LINEAR tiling is slower, it allows the CPU to safely write and read from that memory.
+
+VkImageViewCreateInfo wraps an image with view information: viewType, image handle, format, and subresourceRange (which controls mipmap levels and array layers).
+
+VkPipelineDepthStencilStateCreateInfo controls depth testing: depthTestEnable, depthWriteEnable, depthCompareOp (e.g., VK_COMPARE_OP_LESS), depthBoundsTestEnable, stencilTestEnable.
+
+Depth image creation:
+VkFormat depthFormat = VK_FORMAT_D32_SFLOAT;
+VkImageCreateInfo dimg_info = image_create_info(depthFormat, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, depthImageExtent);
+VmaAllocationCreateInfo dimg_allocinfo = {};
+dimg_allocinfo.usage = VMA_MEMORY_USAGE_GPU_ONLY;
+dimg_allocinfo.requiredFlags = VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT;
+vmaCreateImage(allocator, &dimg_info, &dimg_allocinfo, &depthImage.image, &depthImage.allocation, nullptr);
+VkImageViewCreateInfo dview_info = imageview_create_info(depthFormat, depthImage.image, VK_IMAGE_ASPECT_DEPTH_BIT);
+vkCreateImageView(device, &dview_info, nullptr, &depthImageView);
+
+Depth attachment attachment description:
+depth_attachment.format = depthFormat;
+depth_attachment.samples = VK_SAMPLE_COUNT_1_BIT;
+depth_attachment.loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR;
+depth_attachment.storeOp = VK_ATTACHMENT_STORE_OP_STORE;
+depth_attachment.initialLayout = VK_IMAGE_LAYOUT_UNDEFINED;
+depth_attachment.finalLayout = VK_IMAGE_LAYOUT_DEPTH_STENCIL_ATTACHMENT_OPTIMAL;
+
+Subpass dependency for depth:
+VkSubpassDependency depth_dependency = {};
+depth_dependency.srcSubpass = VK_SUBPASS_EXTERNAL;
+depth_dependency.dstSubpass = 0;
+depth_dependency.srcStageMask = VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT | VK_PIPELINE_STAGE_LATE_FRAGMENT_TESTS_BIT;
+depth_dependency.srcAccessMask = 0;
+depth_dependency.dstStageMask = VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT | VK_PIPELINE_STAGE_LATE_FRAGMENT_TESTS_BIT;
+depth_dependency.dstAccessMask = VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT;
+
+VmaAllocationCreateInfo usage values: VMA_MEMORY_USAGE_GPU_ONLY for VRAM, VMA_MEMORY_USAGE_CPU_TO_GPU for upload buffers, VMA_MEMORY_USAGE_GPU_TO_CPU for readback.
+
+SPIR-V is the standard binary format for Vulkan shaders. GLSL shaders are compiled to SPIR-V using glslangValidator or the Vulkan SDK.
+
+Vulkan Pipeline stages: VK_PIPELINE_STAGE_VERTEX_SHADER_BIT, VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT, VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT, VK_PIPELINE_STAGE_TRANSFER_BIT, VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT, VK_PIPELINE_STAGE_LATE_FRAGMENT_TESTS_BIT.
+
+Memory property flags: VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT (fast GPU memory), VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT (CPU visible), VK_MEMORY_PROPERTY_HOST_COHERENT_BIT (no manual flushing), VK_MEMORY_PROPERTY_HOST_CACHED_BIT (CPU cached).
+
+Buffer usage flags: VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, VK_BUFFER_USAGE_INDEX_BUFFER_BIT, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, VK_BUFFER_USAGE_TRANSFER_SRC_BIT, VK_BUFFER_USAGE_TRANSFER_DST_BIT.
+
+Vulkan synchronization primitives: VkSemaphore (for queue operations ordering), VkFence (for CPU-GPU synchronization), VkEvent (for finer GPU-side synchronization).
+
+VkPipelineStageFlags for synchronization:
+VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT
+VK_PIPELINE_STAGE_DRAW_INDIRECT_BIT
+VK_PIPELINE_STAGE_VERTEX_INPUT_BIT
+VK_PIPELINE_STAGE_VERTEX_SHADER_BIT
+VK_PIPELINE_STAGE_TESSELLATION_CONTROL_SHADER_BIT
+VK_PIPELINE_STAGE_TESSELLATION_EVALUATION_SHADER_BIT
+VK_PIPELINE_STAGE_GEOMETRY_SHADER_BIT
+VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
+VK_PIPELINE_STAGE_EARLY_FRAGMENT_TESTS_BIT
+VK_PIPELINE_STAGE_LATE_FRAGMENT_TESTS_BIT
+VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT
+VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT
+VK_PIPELINE_STAGE_TRANSFER_BIT
+VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT
+VK_PIPELINE_STAGE_HOST_BIT
+VK_PIPELINE_STAGE_ALL_GRAPHICS_BIT
+VK_PIPELINE_STAGE_ALL_COMMANDS_BIT
+
+Vulkan access flags:
+VK_ACCESS_INDIRECT_COMMAND_READ_BIT
+VK_ACCESS_INDEX_READ_BIT
+VK_ACCESS_VERTEX_ATTRIBUTE_READ_BIT
+VK_ACCESS_UNIFORM_READ_BIT
+VK_ACCESS_INPUT_ATTACHMENT_READ_BIT
+VK_ACCESS_SHADER_READ_BIT
+VK_ACCESS_SHADER_WRITE_BIT
+VK_ACCESS_COLOR_ATTACHMENT_READ_BIT
+VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT
+VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_READ_BIT
+VK_ACCESS_DEPTH_STENCIL_ATTACHMENT_WRITE_BIT
+VK_ACCESS_TRANSFER_READ_BIT
+VK_ACCESS_TRANSFER_WRITE_BIT
+VK_ACCESS_HOST_READ_BIT
+VK_ACCESS_HOST_WRITE_BIT
+VK_ACCESS_MEMORY_READ_BIT
+VK_ACCESS_MEMORY_WRITE_BIT
+
+Vulkan format types:
+VK_FORMAT_R8G8B8A8_SRGB (color textures)
+VK_FORMAT_R32G32B32A32_SFLOAT (HDR)
+VK_FORMAT_D32_SFLOAT (depth)
+VK_FORMAT_D24_UNORM_S8_UINT (depth+stencil)
+VK_FORMAT_R16G16_SFLOAT (normal maps)
+VK_FORMAT_R32_SFLOAT (single-channel)
+
+Compute shaders in GLSL:
+#version 450
+layout(local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
+layout(set = 0, binding = 0) buffer Input { float data[]; } inputBuf;
+layout(set = 0, binding = 1) buffer Output { float data[]; } outputBuf;
+void main() {
+    uint id = gl_GlobalInvocationID.x;
+    outputBuf.data[id] = inputBuf.data[id] * 2.0;
+}
+
+Push constants in Vulkan are a way to quickly pass small amounts of data to shaders without needing descriptor sets or uniforms. They are useful for frequently changing per-object data like transformation matrices.
+
+layout(push_constant) uniform PushConstants {
+    mat4 modelMatrix;
+} push;
+
+Vulkan Descriptor Sets describe the layout of resources (uniform buffers, storage buffers, textures, samplers) that shaders can access. A VkDescriptorSetLayout defines the types and bindings, and a VkDescriptorPool allocates descriptor sets.
+
+vkCmdBindDescriptorSets(pipelineBindPoint, pipelineLayout, firstSet, descriptorSetCount, pDescriptorSets, dynamicOffsetCount, pDynamicOffsets);
+
+Vulkan Command Buffer recording pattern:
+vkBeginCommandBuffer(commandBuffer, &beginInfo);
+vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, pipeline);
+vkCmdBindVertexBuffers(commandBuffer, 0, 1, &vertexBuffer, &offset);
+vkCmdBindIndexBuffer(commandBuffer, indexBuffer, 0, VK_INDEX_TYPE_UINT32);
+vkCmdDrawIndexed(commandBuffer, indexCount, 1, 0, 0, 0);
+vkEndCommandBuffer(commandBuffer);
+
+Queue submission:
+VkSubmitInfo submitInfo{};
+submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+submitInfo.waitSemaphoreCount = 1;
+submitInfo.pWaitSemaphores = &imageAvailableSemaphore;
+submitInfo.pWaitDstStageMask = &waitStages;
+submitInfo.commandBufferCount = 1;
+submitInfo.pCommandBuffers = &commandBuffer;
+submitInfo.signalSemaphoreCount = 1;
+submitInfo.pSignalSemaphores = &renderFinishedSemaphore;
+vkQueueSubmit(graphicsQueue, 1, &submitInfo, inFlightFence);
+
+Vulkan swapchain present:
+VkPresentInfoKHR presentInfo{};
+presentInfo.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+presentInfo.waitSemaphoreCount = 1;
+presentInfo.pWaitSemaphores = &renderFinishedSemaphore;
+presentInfo.swapchainCount = 1;
+presentInfo.pSwapchains = &swapchain;
+presentInfo.pImageIndices = &imageIndex;
+vkQueuePresentKHR(presentQueue, &presentInfo);
+
+

@@ -1,0 +1,85 @@
+#version 450
+
+layout(local_size_x = 1, local_size_y = 1, local_size_z = 1) in;
+
+layout(set = 0, binding = 0) readonly buffer InputBuf { int data[]; } input_indices;
+layout(set = 0, binding = 1) readonly buffer TargetBuf { int data[]; } target_indices;
+layout(set = 0, binding = 2) readonly buffer W1Buf { float data[]; } W1;
+layout(set = 0, binding = 3) readonly buffer W2Buf { float data[]; } W2;
+layout(set = 0, binding = 4) readonly buffer b1Buf { float data[]; } b1;
+layout(set = 0, binding = 5) readonly buffer b2Buf { float data[]; } b2;
+layout(set = 0, binding = 6) buffer HiddenBuf { float data[]; } hidden;
+layout(set = 0, binding = 7) buffer LogitsBuf { float data[]; } logits;
+layout(set = 0, binding = 8) buffer dW1Buf { float data[]; } dW1_per;
+layout(set = 0, binding = 9) buffer dW2Buf { float data[]; } dW2_per;
+layout(set = 0, binding = 10) buffer db1Buf { float data[]; } db1_per;
+layout(set = 0, binding = 11) buffer db2Buf { float data[]; } db2_per;
+layout(set = 0, binding = 12) buffer LossBuf { float data[]; } losses;
+
+layout(push_constant) uniform Params {
+    int B;
+    int V;
+    int H;
+} params;
+
+void main() {
+    int idx = int(gl_GlobalInvocationID.x);
+    if (idx >= params.B) return;
+
+    int ci = input_indices.data[idx];
+    int target = target_indices.data[idx];
+    int V = params.V;
+    int H = params.H;
+
+    // hidden = ReLU(W1[ci,:] + b1)
+    for (int k = 0; k < H; k++) {
+        float h = W1.data[ci * H + k] + b1.data[k];
+        hidden.data[idx * H + k] = (h > 0.0) ? h : 0.0;
+    }
+
+    // logits = hidden @ W2 + b2
+    for (int j = 0; j < V; j++) {
+        float s = b2.data[j];
+        for (int k = 0; k < H; k++) {
+            s += hidden.data[idx * H + k] * W2.data[k * V + j];
+        }
+        logits.data[idx * V + j] = s;
+    }
+
+    // softmax (overwrite logits buffer with probs)
+    float mx = logits.data[idx * V];
+    for (int j = 1; j < V; j++) if (logits.data[idx * V + j] > mx) mx = logits.data[idx * V + j];
+    float sum_exp = 0.0;
+    for (int j = 0; j < V; j++) {
+        float e = exp(logits.data[idx * V + j] - mx);
+        logits.data[idx * V + j] = e;
+        sum_exp += e;
+    }
+    for (int j = 0; j < V; j++) logits.data[idx * V + j] /= sum_exp;
+
+    // loss
+    losses.data[idx] = -log(max(logits.data[idx * V + target], 1e-10));
+
+    // backward: dW2, dW1, db1
+    for (int k = 0; k < H; k++) {
+        float hk = hidden.data[idx * H + k];
+        float dh = 0.0;
+        for (int j = 0; j < V; j++) {
+            float p = logits.data[idx * V + j];
+            float d = p - (j == target ? 1.0 : 0.0);
+            dW2_per.data[idx * H * V + k * V + j] = hk * d;
+            dh += d * W2.data[k * V + j];
+        }
+        float orig = W1.data[ci * H + k] + b1.data[k];
+        dh = (orig > 0.0) ? dh : 0.0;
+        dW1_per.data[idx * H + k] = dh;
+        db1_per.data[idx * H + k] = dh;
+    }
+
+    // backward: db2
+    for (int j = 0; j < V; j++) {
+        float p = logits.data[idx * V + j];
+        float d = p - (j == target ? 1.0 : 0.0);
+        db2_per.data[idx * V + j] = d;
+    }
+}
